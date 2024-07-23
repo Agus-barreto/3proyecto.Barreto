@@ -40,51 +40,69 @@
   color: #888;
 }*/
 
-
+/*Navbar*/
 body{
   background-color: black;
 }
-#Navbar{
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  z-index: 1000;
+
+/*header{
+    background: url(../src/assets/img-portada.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }*/
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#Navbar .logo{
+  .logo{
   font-size: 2rem;
   font-weight: 100;
+  margin-bottom: 70vh;
 }
-#navbar a{
-  color: white;
-  text-transform: uppercase;
-  font-weight: 400;
-  padding: 0 0 0 8vh;
-
+#Navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 50px;
 }
-
-#Navbar .container{
+#Navbar .CartWidget{
   display: flex;
-  justify-content: space-between;
-  align-items:center;
-  height: 100%;
-  padding-top:  20vh;
-}
-
-#navbar ul{
-  display: flex;
-  padding-left: 70vh;
+  margin-left: 40vh;
 }
 ul{
-  list-style: none;
-  
+    list-style: none;
+    display: flex;
+    justify-content:space-evenly;
+    padding-left: 40vh;
+    align-items: center;
+    margin-top: -50%;
+  }
+
+ul li{
+  margin-right: 1rem;
+}
+nav ul li a{
+  text-decoration: none;
+  color: white;
 }
 
+/*Portada*/
 .titulo{
-  align-items: center;
-  padding-left: 60vh;
-  text-transform: uppercase;
-  padding-top: 100px;
+  text-align: center;
+}
+.display-1{
+    font-size: 3.5rem;
+    font-weight: 400;
+    padding-bottom: 30px;
+    margin-top: -340px; /* Ajusta este valor según sea necesario */
+    text-align: center; /* Por si acaso no se centró horizontalmente en el contenedor */
+    margin-left: 40vh;
+    font-family: "IBM Plex Sans, sans-serif";
+  
 }
 
 .parrafo-1{
@@ -92,3 +110,4 @@ ul{
   padding-left: 44vh;
   padding-top: 20px;
 }
+

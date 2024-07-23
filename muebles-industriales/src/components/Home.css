@@ -1,0 +1,10 @@
+
+
+.header{
+    background: url(../img/img-portada-3.png);
+    background-repeat: no-repeat;
+    height: 100vh;
+    align-items: center;
+    display:block;
+    background-size: cover;
+}
