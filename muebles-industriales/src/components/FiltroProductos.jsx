@@ -2,8 +2,8 @@ import React from 'react';
 
 
 const FiltroProductos = ({productos, categoria}) => {
-    const [filtrado, setFiltrado] = useState([]);
-    useEffect(() => setfiltrado(productos), []);
+   /* const [filtrado, setFiltrado] = useState([]);
+    useEffect(() => setfiltrado(productos), []);*/
 
     const FiltrarProducto = (nombre) => {
     const FiltrarProducto = productos.filter((e)=>

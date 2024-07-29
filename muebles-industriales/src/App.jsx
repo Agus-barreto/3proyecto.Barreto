@@ -6,7 +6,7 @@ import ItemList from './components/ItemList';
 import ItemListContainer from './components/ItemListContainer';
 import Item from './components/Item';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import FiltroProductos from './components/FiltroProductos';
+/*import FiltroProductos from './components/FiltroProductos';*/
 import ItemDetail from './components/ItemDetail';
 import Home from './components/Home/Home';
 import Contacto from './components/Contact';
@@ -37,7 +37,6 @@ fetchData()
     <>
       <BrowserRouter>
         <Navbar />
-        <FiltroProductos/>
         <Routes> 
           <Route path='/Home' element={<Home/>}
           />
