@@ -1,30 +1,31 @@
-import React, { useEffect } from "react";
+import React, { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
-import fetchdata from "../fetchData";
-import FilterProductos from "./FiltroProductos";
-
 
 
 const ItemDetail = ({productos}) => {
     const {id} = useParams();
-    const [productoSeleccionado, setProductosSeleccionados]= useState({});
+    /*const [productoSeleccionado, setProductosSeleccionados]= useState({});*/
 
     const [item, setItem] = useState();
 
     useEffect(() => {
-    setItem(productos.find((el) => el.id === parseInt(id)))
-    }, [id, productos]);
-
+      const productoSeleccionado = productos.find((el) => el.id === parseInt(id));
+      setItem(productoSeleccionado);
+  }, [id, productos]);
+  
+    if (!item) {
+      return <div>Loading...</div>; 
+  }
 
     return (
         <>
           { (
-            <div key={el.id}>
+            <div key={item.id}>
               <div >
                 <div>
-                  <img src={imagen}></img>
-                  <h1 > {el.precio}</h1>
-                  <p>{el.descripcion}</p>
+                  <img src={item.imagen}></img>
+                  <h1> {item.precio}</h1>
+                  <p>{item.descripcion}</p>
                   <button>
                     Agregar al Carrito
                   </button>
