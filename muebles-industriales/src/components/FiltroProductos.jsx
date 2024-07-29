@@ -1,43 +1,36 @@
-/*import React, { useEffect } from "react";
+import React from 'react';
 
 
+const FiltroProductos = ({productos, categoria}) => {
+    const [filtrado, setFiltrado] = useState([]);
+    useEffect(() => setfiltrado(productos), []);
 
-
-const FiltroProductos = ({ productos }) => {
-    const [searchTerm, setSearchTerm] = useState('');
-    const [category, setCategory] = useState('all');
-
-const FiltroProductos = productos.filter(productos => {
-    return (
-        (productos.name.toLowerCase().includes(searchTerm.toLowerCase())) &&
-        (category === 'all' || productos.category === category)
+    const FiltrarProducto = (nombre) => {
+    const FiltrarProducto = productos.filter((e)=>
+    e.nombre.toLowerCase().includes(filter.toLowerCase(nombre))
     );
-});
-
-return (
-    <div>
-        <input 
-        type="text" 
-        placeholder="Search..." 
-        value={searchTerm} 
-        onChange={(e) => setSearchTerm(e.target.value)} 
-    />
-    <select value={category} onChange={(e) => setCategory(e.target.value)}>
-        <option value="todo">Todo</option>
-        <option value="mesas">Mesas Ratonas</option>
-        <option value="muebles">Muebles</option>
-    </select>
-
-    <ul>
-        {FiltroProductos.map(productos => (
-        <li key={id}>{productos.name} - {productos.category}</li>
-        ))}
-    </ul>
+    setFiltrado(filtrar)
+    };
+    
+    console.log(filtrado)
+    const entrada = (e) => FiltrarProducto(e.target.value);
+return(
+    <>
+    <label htmlFor="FiltrarProductos">Buscar muebles por categotia:</label>
+    <div> {filtrado.map((e) =>(
+        <div key={el.id}>
+        <div >
+            <div>
+            <img src={e.imagen}></img>
+            <h1 > {e.precio}</h1>
+            <p>{e.descripcion}</p>
+        </div>
+        </div>
     </div>
-);
-};
+    ))}
+    </div>
+    </>
 
-
-
-
-export default FiltroProductos;*/
+)
+}
+export default FiltroProductos

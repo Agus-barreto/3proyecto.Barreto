@@ -9,7 +9,10 @@ const ItemListContainer = ({ productos }) => {
                 productos.length === 0 ?
                     <p>Cargando...</p>
                     :
+                <div>
                     <ItemList productos={productos}/>
+                </div>
+                    
             }
         </>
     );

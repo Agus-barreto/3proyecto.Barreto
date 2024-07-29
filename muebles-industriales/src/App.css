@@ -42,14 +42,19 @@
 
 /*Navbar*/
 body{
-  background-color: black;
+  background-color: white;
 }
-
+img{
+    max-width: 100%;
+}
 /*header{
-    background: url(../src/assets/img-portada.jpeg);
+    background: url(../src/assets/img-fto.png);
     background-repeat: no-repeat;
+    height: 57vh;
+    
+    align-items: center;
+    display:block;
     background-size: cover;
-    height: 100vh;
   }*/
 
 .container{
