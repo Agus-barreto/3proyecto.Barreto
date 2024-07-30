@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Item from './Item';
 
 
 const ItemDetail = ({productos}) => {
@@ -11,7 +12,7 @@ const ItemDetail = ({productos}) => {
     useEffect(() => {
       const productoSeleccionado = productos.find((el) => el.id === parseInt(id));
       setItem(productoSeleccionado);
-  }, [id, productos]);
+  }, [id, producto]);
   
     if (!item) {
       return <div>Loading...</div>; 
