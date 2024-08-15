@@ -1,72 +1,55 @@
-import React, { useState,useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Item from './Item';
+import ItemCount from './ItemCount';
+import { CartContext } from './CartContext';
+
 
 
 const ItemDetail = ({productos}) => {
-    const {id} = useParams();
-    /*const [productoSeleccionado, setProductosSeleccionados]= useState({});*/
+    
+    const user =useContext(CartContext);
+    console.log(user)
 
-    const [item, setItem] = useState();
 
+
+
+    const { id } = useParams();
+
+    const [productoSeleccionado, setProductoSeleccionado] = useState({});
+    
     useEffect(() => {
-      const productoSeleccionado = productos.find((el) => el.id === parseInt(id));
-      setItem(productoSeleccionado);
-  }, [id, producto]);
-  
-    if (!item) {
-      return <div>Loading...</div>; 
-  }
+        const productoSeleccionado = productos.find(el => el.id === parseInt(id));
+        setProductoSeleccionado(productoSeleccionado);
+    },[id, productos]);
 
-    return (
+    
+    
+        return (
         <>
-          { (
-            <div key={item.id}>
-              <div >
-                <div>
-                  <img src={item.imagen}></img>
-                  <h1> {item.precio}</h1>
-                  <p>{item.descripcion}</p>
-                  <button>
-                    Agregar al Carrito
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
-        </>
-      );
-    };
-/*useEffect(() => {
-    const findProduct = productos.find(el => el.id === parseInt(id));
-    array.find(el => el.id === parseInt(id));
-    setProductoSeleccionado(findProduct);
-    },[]);
+        <div key={productoSeleccionado.id} className="text-white bg-black pt-7">
 
-if (productoSeleccionado == undefined){
-    console.log("error, productoSeleccionado")
-}
-/*return (
-    <> 
-        <div key={id} className="card-productos">
-        <img src={imagen} alt="" className="imagen" />
-            <h3>{nombre}</h3>
-            <p>{descripcion}</p>
-            <p>${precio}</p>
-            <button onClick={() => ItemDetail(productos)}>Agregar al Carrito</button>
+        
+        <div className='detalle-producto'>
+            <Item 
+            imagen={productoSeleccionado.imagen}
+            id={productoSeleccionado.id} 
+            nombre={productoSeleccionado.nombre} 
+            descripcion={productoSeleccionado.descripcion} 
+            precio={productoSeleccionado.precio} />
+            
         </div>
+        <ItemCount 
+                /*cantidad={cantidad}
+                handleSumar={handleSumar}
+                handleRestar={handleRestar}
+                handleAgregar={() => { agregarAlCarrito(productos, cantidad)}}*/
+            />
+        </div>
+        
     </>
-);*/
-
-/*return (
-    <div>
-        <p>
-            Detalle del producto {productoSeleccionado.nombre}
-        </p>
-        <Item key={productoSeleccionado.id} id={productoSeleccionado.id} nombre={productoSeleccionado.nombre} precio={productoSeleccionado.precio} />
-    </div>
-)
-}*/
-
+        
+    )
+}
 
 export default ItemDetail

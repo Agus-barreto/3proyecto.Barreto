@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import ItemList from './ItemList';
+import Loader from './Loader';
 
 const ItemListContainer = ({ productos }) => {
 
     return (
         <>
-            {
-                productos.length === 0 ?
-                    <p>Cargando...</p>
-                    :
+            { productos.length === 0 ? 
+                    <Loader />
+                :
                 <div>
-                    <ItemList productos={productos}/>
+                    <ItemList productos={productos} />
                 </div>
                     
             }
